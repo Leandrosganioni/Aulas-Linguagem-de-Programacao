@@ -4,5 +4,5 @@ git init
 git add .
 git commit -m "..."
 git branch -M main
-git remote add origin https://github.com/Leandrosganioni/Aulas-Linguagem-de-Programa-o.git
+git remote add origin https://github.com/Leandrosganioni/Aulas-Linguagem-de-Programacao.git
 git push -u origin main
