@@ -8,4 +8,8 @@
 </head>
 <body>
     <h1>Hoje é dia <?php echo date("d/m/Y");?></h1>
+    <form action="resposta.php" method="POST"> <!-- sempre tem que ter action e method -->
+        <input type="text" name="valor" />
+        <button type="submit">Enviar</button>
+    </form>
 </body>
