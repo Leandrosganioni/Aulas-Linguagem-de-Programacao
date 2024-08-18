@@ -8,35 +8,90 @@
   </head>
 <body>
   <div class="container">
-    <form>
-      <div class="row">
-        <div class="col-md-1 pe-5">
-          <label for="inputcode" class="form-label">Código</label>
-          <input type="text" class="form-control" id="inputZip" value="32" disabled> 
+    <div class="row">
+        <div class="col">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-2 pe-4">
+                <label for="cod" class="form-label">Código</label>
+                <input type="text" class="form-control" id="inputcod" value="32" disabled>
+              </div>
+              <div class="col">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" id="nome" name="nome" class="form-control"/>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="tel" class="form-label">Nº Celular</label>
+                <input type="text" class="form-control" id="tel">
+              </div>
+              <div class="col">
+                <label for="fixo" class="form-label">Nº Telefone fixo</label>
+                <input type="text" id="fixo" name="fixo" class="form-control"/>
+              </div>
+              <div class="col">
+                <label for="cep" class="form-label">CEP</label>
+                <input type="text" id="cep" name="cep" class="form-control"/>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="city" class="form-label">Cidade</label>
+                <input type="text" class="form-control" id="city">
+              </div>
+              <div class="col-md-2 pe-4">
+                <label for="uf" class="form-label">UF</label>
+                <input type="text" id="uf" name="uf" class="form-control"/>
+              </div>
+              <div class="col-md-3">
+                <label for="Status" class="form-label">Status</label>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Selecione
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-menu" href="#">Solteiro</a>"</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="col">
-          <label for="text" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="text">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <label for="cod" class="form-label">Email</label>
+                <input type="text" id="cod" name="cod" class="form-control"/>
+              </div>
+              <div class="col-md-4">
+                <label for="CPF" class="form-label">CPF</label>
+                <input type="text" id="CPF" name="CPF" class="form-control"/>
+              </div>              
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label for="log" class="form-label">Logradouro</label>
+                <input type="text" class="form-control" id="log">
+              </div>
+              <div class="col-md-2">
+                <label for="numeror" class="form-label">Nº</label>
+                <input type="number" id="numero" name="numero" class="form-control"/>
+              </div>
+              <div class="col">
+                <label for="bairro" class="form-label">Bairro</label>
+                <input type="text" id="bairro" name="bairro" class="form-control"/>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col">
-          <label for="text2" class="form-label">Email</label>
-          <input type="text" class="form-control" id="text2">
-        </div>
-        <div class="col-md-2">
-          <label for="inputcode" class="form-label">CPF</label>
-          <input type="text" class="form-control" id="inputcpf">
-        </div>
-      <div class="row">
-        <div class="col-md-2">
-          <label for="text" class="form-label"">N Celular</label>
-          <input type="text" class="form-control" id="numerocelular">
-        </div>
-        <div class="col-md-2">
-          <label for="text" class="form-label">N Telefone Fixo</label>
-          <input type="text" class="form-control" id="numerotelefone">
-        </div>
+    </div>
+    <div class="row">
+      <div class="col mt-3 mb-3 form-check d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary  btn-danger text-white">Resetar</button>
+        <button type="submit" class="btn btn-primary  btn-success text-white">Próximo</button>
       </div>
-      </div>
-    </form>
+    </div>
   </div>
 </body>
