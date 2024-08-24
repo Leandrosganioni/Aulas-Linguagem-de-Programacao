@@ -12,15 +12,13 @@
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             try{
                 $raio = (int) $_POST['raio'] ?? 0;
-                $resultado = ($largura * $altura);
+                $resultado = (3.14 * $raio ** 2);
                 echo "<p>Área do retangulo: $resultado</p>";
             }
             catch(Exception $e) {
                 echo "Erro! ".$e->getMessage();
 
-            }
-            
+            }   
         }
-    
     ?>
   </body>
