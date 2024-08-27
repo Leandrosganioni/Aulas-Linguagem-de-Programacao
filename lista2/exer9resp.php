@@ -13,11 +13,10 @@
             try{
                 $raio = (int) $_POST['raio'] ?? 0;
                 $resultado = (3.14 * ($raio ** 2));
-                echo "<p>Área do retangulo: $resultado</p>";
+                echo "<p>Resultado: $resultado</p>";
             }
             catch(Exception $e) {
                 echo "Erro! ".$e->getMessage();
-
             }   
         }
     ?>
