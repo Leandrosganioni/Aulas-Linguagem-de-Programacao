@@ -17,9 +17,7 @@
                 echo "<p>Soma: $resultado</p>";
             } catch(Exception $e) {
                 echo "Erro!".$e->getMessage();
-
             }
         }
-    
     ?>
   </body>
