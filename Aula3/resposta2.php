@@ -8,7 +8,7 @@
   </head>
 <body>
     <?php
-        declare(strict_types=1);
+        declare(strict_types=1);{
 
         function soma(int $a, int $b):int{
             return $a + $b;
@@ -31,6 +31,7 @@
             saudacao();
             saudacao("Vanessa");
         }
+    
         catch(Exception $e)
         {
             echo "Erro: " .$e->GetMessage();
