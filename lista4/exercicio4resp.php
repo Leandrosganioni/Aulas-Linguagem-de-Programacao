@@ -1,4 +1,6 @@
-
+<?php
+    declare(strict_types=1);
+    ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,19 +11,23 @@
   </head>
 <body>
     <?php
-        if($_SERVER['REQUEST_METHOD'] == 'POST') 
-        try
+        function checaData($dia, $mes, $ano)
         {
-            $dia = $_POST['dia'];
-            $mes = $_POST['mes'];
-            $ano = $_POST['ano'];
             if (checkdate($mes, $dia, $ano)) {
                 echo "<h1>Data válida</h1>";
                 echo "<h2>A data {$dia}/{$mes}/{$ano} está correta, parabéns.</h2>";
+                
             } else {
                 echo "<p>Data inválida</p>";
             }
-
+        }
+        if($_SERVER['REQUEST_METHOD'] == 'POST') 
+        try
+        {
+            $dia = intval($_POST['dia']);
+            $mes = intval($_POST['mes']);
+            $ano = intval($_POST['ano']);
+            checaData($dia, $mes, $ano);
         }
         catch(Exception $e)
         {

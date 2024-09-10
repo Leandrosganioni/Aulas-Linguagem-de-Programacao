@@ -1,4 +1,6 @@
-
+<?php
+    declare(strict_types=1);
+    ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,13 +11,20 @@
   </head>
 <body>
     <?php
+        function maiusculo(string $palavra)
+        {
+          return strtoupper($palavra);
+        }
+        function minusculo(string $palavra)
+        {
+          return strtolower($palavra);
+        }
         if($_SERVER['REQUEST_METHOD'] == 'POST') 
         try
         {
             $palavra = $_POST['palavra'];
-            $maiusculo = strtoupper($palavra);
-            $minusculo = strtolower($palavra);
-            echo "A palavra {$palavra} em maiusculo é {$maiusculo} e, em minusculo, {$minusculo} ";
+            echo "A palavra {$palavra} em maiusculo é ".maiusculo($palavra);
+            echo "A palavra {$palavra} em maiusculo é ".minusculo($palavra);
         }
         catch(Exception $e)
         {
