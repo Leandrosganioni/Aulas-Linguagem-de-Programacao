@@ -11,7 +11,7 @@
     <form action="exercicio6resp.php" method="POST">
         <div class="row">
             <div class="col">
-                <label for="valor1" class="form-label">Informe um valor para arredondar: </label>
+                <label for="valor1" class="form-label">Informe valor:</label>
                 <input type="number" class="form-control" name="valor1" id="valor1" step="0.010">
             </div>
         </div>

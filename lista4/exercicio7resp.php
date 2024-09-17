@@ -1,3 +1,7 @@
+<?php
+    declare(strict_types=1);
+    ?>
+
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -9,29 +13,37 @@
   <body>
     <h1>Resposta do exercício 7</h1>
     <?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    try {
-        $possibleFormats = array('Y-m-d', 'm/d/Y', 'd/m/Y');
+        function calcularData(DateTime $data1, DateTime $data2): int
+        {
+            $interval = $data1->diff($data2);
+            return $interval->days;
+        }
 
-        foreach ($possibleFormats as $format) {
-            $data1 = DateTime::createFromFormat($format, $_POST['data1']);
-            $data2 = DateTime::createFromFormat($format, $_POST['data2']);
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            try {
+                $possibleFormats = array('Y-m-d', 'm/d/Y', 'd/m/Y');
+                $data1 = $_POST['data1'];
+                $data2 = $_POST['data2'];
 
-            if ($data1 && $data2) {
-                $intervalo = $data1->diff($data2);
-                $diferencaDias = $intervalo->days;
+                foreach ($possibleFormats as $format) {
+                    try {
+                        $data1Object = DateTime::createFromFormat($format, $data1);
+                        $data2Object = DateTime::createFromFormat($format, $data2);
 
-                echo "<p'>A diferença das datas informadas é $diferencaDias dias.</p>";
-                break;
+                        if ($data1Object && $data2Object) {
+                            echo "A diferença entre as datas é de " . calcularData($data1Object, $data2Object) . " dias.";
+                            break;
+                        }
+                    } catch (Exception $e) {
+                    }
+                }
+
+                if (!$data1 || !$data2) {
+                    throw new Exception("Erro: Formato de data inválido.");
+                }
+            } catch (Exception $e) {
+                echo "Erro!" . $e->getMessage();
             }
         }
-
-        if (!$data1 || !$data2) {
-            throw new Exception("Erro: Formato inválido.");
-        }
-    } catch (Exception $e) {
-        echo "Erro!" . $e->getMessage();
-    }
-}
 ?>
   </body>
