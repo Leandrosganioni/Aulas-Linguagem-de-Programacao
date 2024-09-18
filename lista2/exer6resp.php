@@ -13,7 +13,7 @@
             try{
                 $celsius = (int) $_POST['celsius'];
                 $resultado = $celsius * 1.8 + 32;
-                echo "<p>Celsius em Fahrenheit: $resultado</p>";
+                echo "<p>$celsius Celsius são $resultado Fahrenheit</p>";
             }
             catch(Exception $e) {
                 echo "Erro! ".$e->getMessage();

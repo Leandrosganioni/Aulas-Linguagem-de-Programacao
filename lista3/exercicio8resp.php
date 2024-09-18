@@ -13,12 +13,12 @@
         {
             try
             { 
-                $valor = (int) $_POST['valor'] ?? 0;
-                do {
-                    echo $valor . "\n";
-                    $valor--;
-                } while ($valor >= 0);
-                echo "\n";
+              $numero = (int)$_POST['valor'] ?? 0;
+              do {
+                  echo $numero . "<br>";
+                  $numero--;
+              } while ($numero >= 0);
+              echo "<br>";
             
             } 
             catch(Exception $e) 

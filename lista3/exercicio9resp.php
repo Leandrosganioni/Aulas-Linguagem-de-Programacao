@@ -13,13 +13,12 @@
         {
             try
             { 
-                $valor = (int) $_POST['valor'] ?? 0;
-                $soma = 0;
-                $fatorial = 1;
-                for ($i = 1; $i <= $valor; $i++) {
-                    $fatorial *= $i;
-                }
-                echo "Fatorial: $fatorial";
+              $numero = (int)$_POST['valor'] ?? 0;
+              $resultado = 1;
+              for ($contador = 1; $contador <= $numero; $contador++) {
+                  $resultado *= $contador;
+              }
+              echo "Fatorial do número: $resultado";
             }
             catch(Exception $e) 
             {

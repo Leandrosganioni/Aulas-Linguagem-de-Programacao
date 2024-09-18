@@ -12,20 +12,19 @@
 <body>
     <?php
 
-        function conter(string $palavra, string $palavra2){
-        if (strpos($palavra, $palavra2) != false){
-            echo "A palavra {$palavra2} está contida na {$palavra}";
-        }else{
-            echo "A palavra {$palavra2} definitivamente não está contida na palavra {$palavra}";
+    function verificarContem(string $frase, string $termo) {
+        if (strpos($frase, $termo) !== false) {
+            echo "A palavra '{$termo}' está presente em '{$frase}'";
+        } else {
+            echo "A palavra '{$termo}' não está contida em '{$frase}'";
         }
-        }
-
+    }
         if($_SERVER['REQUEST_METHOD'] == 'POST') 
         try
         {
             $palavra = $_POST['palavra'];
             $palavra2 = $_POST['palavra2'];
-            conter($palavra, $palavra2);
+            verificarContem($palavra, $palavra2);
         }
         catch(Exception $e)
         {

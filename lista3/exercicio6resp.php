@@ -11,11 +11,10 @@
     <?php
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             try{
-                
-                $valor = (int) $_POST['valor'] ?? 0; 
-                for ($i = 1; $i <= $valor; $i++) {
-                    echo $i . "\n";
-                }
+              $valor = (int)$_POST['valor'] ?? 0;
+              for ($contador = 1; $contador <= $valor; $contador++) {
+                  echo $contador . "<br>";
+              }
             } catch(Exception $e) {
                 echo "Erro!".$e->getMessage();
             }

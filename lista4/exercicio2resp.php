@@ -11,20 +11,19 @@
   </head>
 <body>
     <?php
-        function maiusculo(string $palavra)
-        {
-          return strtoupper($palavra);
-        }
-        function minusculo(string $palavra)
-        {
-          return strtolower($palavra);
-        }
+        function converterMaiusculo(string $texto) {
+          return strtoupper($texto);
+      }
+  
+      function converterMinusculo(string $texto) {
+          return strtolower($texto);
+      }
         if($_SERVER['REQUEST_METHOD'] == 'POST') 
         try
         {
-            $palavra = $_POST['palavra'];
-            echo "A palavra {$palavra} em maiusculo é ".maiusculo($palavra);
-            echo "A palavra {$palavra} em maiusculo é ".minusculo($palavra);
+          $palavra = $_POST['palavra'];
+          echo "A palavra '{$palavra}' em maiúsculas: " . converterMaiusculo($palavra);
+          echo "<br>A palavra '{$palavra}' em minúsculas: " . converterMinusculo($palavra);
         }
         catch(Exception $e)
         {

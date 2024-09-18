@@ -13,12 +13,12 @@
         {
             try
             { 
-                $valor = (int) $_POST['valor'] ?? 0; 
-                $soma = 0;
-                $i = 1;
-                while ($i <= $valor) {
-                    $soma += $i;
-                    $i++;
+              $valor = (int)$_POST['valor'] ?? 0;
+              $total = 0;
+              $contador = 1;
+              while ($contador <= $valor) {
+                  $total += $contador;
+                  $contador++;
                 }
                 echo "Soma: $soma";
             } 

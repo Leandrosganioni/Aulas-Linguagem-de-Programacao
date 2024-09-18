@@ -12,7 +12,7 @@
         <div class="container mt-3 ">
         <div class="row">
             <div class="col mb-3 mt-3 ">
-                <label for="celsius" class="form-label">Informe o grau em celsius: </label>
+                <label for="celsius" class="form-label">Informe a temperatura em celsius: </label>
                 <input type="number" class="form-control" name="celsius" id="celsius">
             </div>
         </div>

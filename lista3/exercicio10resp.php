@@ -9,20 +9,16 @@
   <body>
     <h1>Resposta do exercício 10</h1>
     <?php
-        if($_SERVER['REQUEST_METHOD'] == 'POST')
-        {
-            try
-            { 
-                $valor = (int) $_POST['valor'] ?? 0;
-                for ($i = 1; $i <= 10; $i++) {
-                    $resultado = $valor * $i;
-                    echo "<p>$valor x $i = $resultado</p>";
-                }
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        try { 
+            $numero = (int)$_POST['valor'] ?? 0;
+            for ($multiplicador = 1; $multiplicador <= 10; $multiplicador++) {
+                $produto = $numero * $multiplicador;
+                echo "<p>$numero x $multiplicador = $produto</p>";
             }
-            catch(Exception $e) 
-            {
-                echo "Erro!".$e->getMessage();
-            }
+        } catch (Exception $erro) {
+            echo "Erro: " . $erro->getMessage();
         }
+      }
     ?>
   </body>

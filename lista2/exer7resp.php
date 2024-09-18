@@ -13,7 +13,7 @@
             try{
                 $farhenheit = (int) $_POST['farhenheit'];
                 $resultado = ($farhenheit - 32) * (5 / 9);
-                echo "<p>farhenheit em Celsius: $resultado</p>";
+                echo "<p>$farhenheit farhenheit são: $resultado Celsius</p>";
             }
             catch(Exception $e) {
                 echo "Erro! ".$e->getMessage();

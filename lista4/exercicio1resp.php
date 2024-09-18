@@ -12,15 +12,15 @@
   </head>
 <body>
     <?php
-        function calcularCaracteres(string $palavra):int{
-          return strlen($palavra);
-        }
+        function obterQuantidadeCaracteres(string $texto): int {
+          return strlen($texto);
+      }
         if($_SERVER['REQUEST_METHOD'] == 'POST') 
         try
         {
-            $palavra = $_POST['palavra'];
-            calcularCaracteres($palavra);
-            echo "A palavra tem ".calcularCaracteres($palavra);
+          $palavra = $_POST['palavra'];
+          $resultado = obterQuantidadeCaracteres($palavra);
+          echo "A palavra contém " . $resultado . " caracteres.";
         }
         catch(Exception $e)
         {

@@ -14,7 +14,7 @@
                 $valor1 = (int) $_POST['valor1'] ?? 0;
                 $valor2 = (int) $_POST['valor2'] ?? 0;
                 $resultado = $valor1 * $valor2;
-                echo "<p>Multiplicação: $resultado</p>";
+                echo "<p>A multiplicação de $valor1 x $valor2 é: $resultado</p>";
             } catch(Exception $e) {
                 echo "Deu ruim!".$e->getMessage();
 
