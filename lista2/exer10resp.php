@@ -14,7 +14,7 @@
                 $largura = (int) $_POST['largura'] ?? 0;
                 $altura = (int) $_POST['altura'] ?? 0;
                 $resultado = ($largura ** 2) + ($altura ** 2);
-                echo "<p>Perímetro do retângulo calculado ($largura ^2 + $altura ^2 é: $resultado</p>";
+                echo "<p>Perímetro do retângulo calculado $largura ^2 + $altura ^2 é: $resultado</p>";
             }
             catch(Exception $e) {
                 echo "Erro! ".$e->getMessage();
