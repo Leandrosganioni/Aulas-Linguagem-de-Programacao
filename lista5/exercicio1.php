@@ -3,11 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Exercício 1</title>
+    <title>Exercício 2</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
 <body>
-    
     <form action="" method="POST">
         <?php for($i=1;$i<=5;$i++):?>
         <div class="container">
@@ -32,25 +31,13 @@
 
                     $nome = $_POST['nomes'];
                     $numero = $_POST['numeros'];
-                    $nomesRepetidos = [];
-                    $numerosRepetidos = [];
-                    
-                    foreach ($nome as $nomes) {
-                        if (in_array($nomes, $nomesRepetidos)) {
-                            echo "O nome $nomes foi repetido...<br>";
-                        } else {
-                            echo "<p>$nomes</p>";
-                            $nomesRepetidos[] = $nomes;  
-                        }
+                    $nomesNumeros = [];
+                    foreach ($nome as $chave => $valor)
+                    {
+                        if ((!isset($nomesNumeros[$valor]) && (!in_array($numero[$chave],$nomesNumeros))))
+                        $nomesNumeros[$valor] = $numero[$chave];
                     }
-                    foreach ($numero as $numeros) {
-                        if (in_array($numeros, $numerosRepetidos)) {
-                            echo "O número $numeros foi repetido...";
-                        } else {
-                            echo "<p>$numeros</p>";
-                            $numerosRepetidos[] = $numeros;  
-                        }
-                    }
+                    print_r($nomesNumeros);
                 } catch (Exception $e){
                     echo $e->getMessage();
                 }
