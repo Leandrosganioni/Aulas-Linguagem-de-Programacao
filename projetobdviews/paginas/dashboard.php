@@ -1,4 +1,10 @@
 <?php
+
+    session_start();
+    if(!isset($_SESSION['acesso'])){
+        header('Location: login.php');
+    }
+
     require_once 'cabecalho.php'; 
     require_once 'navbar.php';
 ?>
