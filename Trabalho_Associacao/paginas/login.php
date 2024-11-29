@@ -1,24 +1,27 @@
 <?php 
 
+    require_once('../funcoes/usuarios.php');
+
     session_start();
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         try{
             $email = $_POST['email'] ?? "";
             $senha = $_POST['senha'] ?? "";
             if ($email != "" && $senha != ""){
-                if ($email  == "adm@adm.com" && $senha == '123'){
-                    $_SESSION['usuario'] = 'Administrador';
+                $usuario = login($email, $senha);
+                if ($usuario){
+                    $_SESSION['usuario'] = $usuario['nome'];
+                    $_SESSION['nivel'] = $usuario['nivel'];
                     $_SESSION['acesso'] = true;
-                    header("location: dashboard.php");
+                    header("Location: dashboard.php");
                 } else {
-                    $erro = "credenciais invalidas";
+                    $erro = "Credenciais inválidas!";
                 }
             }
         } catch(Exception $e){
             echo "Erro: ".$e->getMessage();
         }
     }
-
     require_once 'cabecalho.php'; 
 ?>
 
@@ -35,7 +38,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Entrar</button>
     </form>
-    <?php 
+    <?php
         if(isset($erro)) echo "<p class='text-danger'>$erro</p>";
     ?>
 </div>
