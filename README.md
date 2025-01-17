@@ -1,0 +1,1 @@
+Sequência de exercícios realizados na faculdade de Análise e Desenvolvimento de Sistemas buscando entender o básico da linguagem php e aplicação do bootstrap. Por fim, um pequeno projeto voltado ao desenvolvimento de um sistema simples utilizando php, MySqL e bootstrap de um sistema de cadastro de uma associação. Trabalho realizado individualmente.
